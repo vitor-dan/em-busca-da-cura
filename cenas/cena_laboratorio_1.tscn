@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://recursos/tileset/auto_tileset_with_coll_nav.tres" type="TileSet" id=1]
+[ext_resource path="res://recursos/tileset/tileset_demo.tres" type="TileSet" id=1]
 [ext_resource path="res://cenas/cena_personagem.tscn" type="PackedScene" id=2]
 
 [node name="Node2D" type="Node2D"]

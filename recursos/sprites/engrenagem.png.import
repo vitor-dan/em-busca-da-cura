@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spritesheet_tiles.png-de9ab9d25fe0081a240a0df6aa30adfa.stex"
+path="res://.import/engrenagem.png-c6f5fd1b0337e28e0d2b99b89718f4dd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://recursos/tilesheet/spritesheet_tiles.png"
-dest_files=[ "res://.import/spritesheet_tiles.png-de9ab9d25fe0081a240a0df6aa30adfa.stex" ]
+source_file="res://recursos/sprites/engrenagem.png"
+dest_files=[ "res://.import/engrenagem.png-c6f5fd1b0337e28e0d2b99b89718f4dd.stex" ]
 
 [params]
 

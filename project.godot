@@ -16,8 +16,12 @@ _global_script_class_icons={
 [application]
 
 config/name="em-busca-da-cura"
-run/main_scene="res://cenas/cena_laboratorio_1.tscn"
+run/main_scene="res://cenas/cena_tela_inicial.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+ScriptGlobal="*res://script_global.gd"
 
 [input]
 
