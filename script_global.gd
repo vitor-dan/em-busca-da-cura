@@ -1,5 +1,6 @@
 extends Node
 
+var caminho_site = "http://localhost/estudo/uninove/cc/7/proj_sis_int/";
 var caminho_api = "http://localhost/estudo/uninove/cc/7/proj_sis_int/api/";
 var cabecalho_http_post = ["Content-Type: application/x-www-form-urlencoded"]
 
