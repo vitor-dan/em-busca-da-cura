@@ -16,7 +16,15 @@ func _on_BtnRanking_input_event(viewport, event, shape_idx):
 		get_tree().change_scene("res://cenas/cena_ranking.tscn")
 
 func _on_BtnConfiguracao_mouse_entered():
-	$BtnConfiguracao/AnimationPlayer.play("engrenagem_rodando")
+	$BtnConfiguracao/AnimPlayerBtnConfiguracao.play("engrenagem_rodando")
 
 func _on_BtnConfiguracao_mouse_exited():
-	$BtnConfiguracao/AnimationPlayer.stop()
+	$BtnConfiguracao/AnimPlayerBtnConfiguracao.stop()
+
+func _on_BtnRanking_mouse_entered():
+	$BtnRanking/AnimPlayerBtnRanking.play("hover")
+
+func _on_BtnRanking_mouse_exited():
+	$BtnRanking/AnimPlayerBtnRanking.stop(false)
+	$BtnRanking/AnimPlayerBtnRanking.seek(0, true)
+

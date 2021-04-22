@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/script_tela_inicial.gd" type="Script" id=1]
-[ext_resource path="res://recursos/sprites/engrenagem.png" type="Texture" id=2]
+[ext_resource path="res://recursos/sprites/configuracoes.png" type="Texture" id=2]
+[ext_resource path="res://recursos/sprites/trofeu.png" type="Texture" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 24.0
@@ -24,6 +25,35 @@ tracks/0/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 24, 24 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "hover"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("BtnRanking/SpriteTrofeu:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -5 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BtnRanking/SpriteTrofeu:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -9.0, 9.0, -9.0, 0.0 ]
+}
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -51,23 +81,33 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BtnConfiguracao"]
 shape = SubResource( 1 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="BtnConfiguracao"]
+[node name="AnimPlayerBtnConfiguracao" type="AnimationPlayer" parent="BtnConfiguracao"]
 root_node = NodePath("../..")
 anims/engrenagem_rodando = SubResource( 2 )
 
 [node name="SpriteEngrenagem" type="Sprite" parent="BtnConfiguracao"]
-rotation = 4.88692
+scale = Vector2( 0.09375, 0.09375 )
 texture = ExtResource( 2 )
 
 [node name="BtnRanking" type="Area2D" parent="."]
-position = Vector2( 846, 84 )
+position = Vector2( 960, 64 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BtnRanking"]
 shape = SubResource( 3 )
+
+[node name="SpriteTrofeu" type="Sprite" parent="BtnRanking"]
+scale = Vector2( 0.094, 0.094 )
+texture = ExtResource( 3 )
+
+[node name="AnimPlayerBtnRanking" type="AnimationPlayer" parent="BtnRanking"]
+root_node = NodePath("../..")
+anims/hover = SubResource( 4 )
 [connection signal="input_event" from="BtnConfiguracao" to="." method="_on_BtnConfiguracao_input_event"]
 [connection signal="mouse_entered" from="BtnConfiguracao" to="." method="_on_BtnConfiguracao_mouse_entered"]
 [connection signal="mouse_exited" from="BtnConfiguracao" to="." method="_on_BtnConfiguracao_mouse_exited"]
 [connection signal="input_event" from="BtnRanking" to="." method="_on_BtnRanking_input_event"]
+[connection signal="mouse_entered" from="BtnRanking" to="." method="_on_BtnRanking_mouse_entered"]
+[connection signal="mouse_exited" from="BtnRanking" to="." method="_on_BtnRanking_mouse_exited"]
