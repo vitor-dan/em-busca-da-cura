@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/engrenagem.png-c6f5fd1b0337e28e0d2b99b89718f4dd.stex"
+path="res://.import/Nurse_1_run_48x48.png-c9ebb0b01f615791e968d19d9bf0b16f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://recursos/sprites/engrenagem.png"
-dest_files=[ "res://.import/engrenagem.png-c6f5fd1b0337e28e0d2b99b89718f4dd.stex" ]
+source_file="res://recursos/sprites/spritesheet/Nurse_1/Nurse_1_run_48x48.png"
+dest_files=[ "res://.import/Nurse_1_run_48x48.png-c9ebb0b01f615791e968d19d9bf0b16f.stex" ]
 
 [params]
 
