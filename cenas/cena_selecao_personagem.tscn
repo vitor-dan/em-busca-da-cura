@@ -1,0 +1,521 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://recursos/sprites/spritesheet/Doctor_1/Doctor_1_48x48.png" type="Texture" id=1]
+[ext_resource path="res://recursos/sprites/spritesheet/Nurse_2/Nurse_2_48x48.png" type="Texture" id=2]
+[ext_resource path="res://recursos/sprites/spritesheet/Nurse_1/Nurse_1_48x48.png" type="Texture" id=3]
+[ext_resource path="res://recursos/sprites/spritesheet/Doctor_2/Doctor_2_48x48.png" type="Texture" id=4]
+[ext_resource path="res://scripts/script_selecao_personagem.gd" type="Script" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 17, 32 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "correndo_costas"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("KinematicBody2D/Doutor1:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 288, 192, 48, 96 ), Rect2( 336, 192, 48, 96 ), Rect2( 384, 192, 48, 96 ), Rect2( 432, 192, 48, 96 ), Rect2( 480, 192, 48, 96 ), Rect2( 528, 192, 48, 96 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("KinematicBody2D/Doutor2:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 576, 192, 48, 96 ), Rect2( 624, 192, 48, 96 ), Rect2( 672, 192, 48, 96 ), Rect2( 720, 192, 48, 96 ), Rect2( 768, 192, 48, 96 ), Rect2( 816, 192, 48, 96 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("KinematicBody2D/Enfermeiro1:region_rect")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 288, 192, 48, 96 ), Rect2( 336, 192, 48, 96 ), Rect2( 384, 192, 48, 96 ), Rect2( 432, 192, 48, 96 ), Rect2( 480, 192, 48, 96 ), Rect2( 528, 192, 48, 96 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("KinematicBody2D/Enfermeiro2:region_rect")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 288, 192, 48, 96 ), Rect2( 336, 192, 48, 96 ), Rect2( 384, 192, 48, 96 ), Rect2( 432, 192, 48, 96 ), Rect2( 480, 192, 48, 96 ), Rect2( 528, 192, 48, 96 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "correndo_frente"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("KinematicBody2D/Doutor1:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 864, 192, 48, 96 ), Rect2( 912, 192, 48, 96 ), Rect2( 960, 192, 48, 96 ), Rect2( 1008, 192, 48, 96 ), Rect2( 1056, 192, 48, 96 ), Rect2( 1104, 192, 48, 96 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("KinematicBody2D/Doutor2:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 864, 192, 48, 96 ), Rect2( 912, 192, 48, 96 ), Rect2( 960, 192, 48, 96 ), Rect2( 1008, 192, 48, 96 ), Rect2( 1056, 192, 48, 96 ), Rect2( 1104, 192, 48, 96 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("KinematicBody2D/Enfermeiro1:region_rect")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 864, 192, 48, 96 ), Rect2( 912, 192, 48, 96 ), Rect2( 960, 192, 48, 96 ), Rect2( 1008, 192, 48, 96 ), Rect2( 1056, 192, 48, 96 ), Rect2( 1104, 192, 48, 96 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("KinematicBody2D/Enfermeiro2:region_rect")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 864, 192, 48, 96 ), Rect2( 912, 192, 48, 96 ), Rect2( 960, 192, 48, 96 ), Rect2( 1008, 192, 48, 96 ), Rect2( 1056, 192, 48, 96 ), Rect2( 1104, 192, 48, 96 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "correndo_lado_d"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("KinematicBody2D/Doutor1:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 0, 192, 48, 96 ), Rect2( 48, 192, 48, 96 ), Rect2( 96, 192, 48, 96 ), Rect2( 144, 192, 48, 96 ), Rect2( 192, 192, 48, 96 ), Rect2( 240, 192, 48, 96 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("KinematicBody2D/Doutor2:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 288, 192, 48, 96 ), Rect2( 336, 192, 48, 96 ), Rect2( 384, 192, 48, 96 ), Rect2( 432, 192, 48, 96 ), Rect2( 480, 192, 48, 96 ), Rect2( 528, 192, 48, 96 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("KinematicBody2D/Enfermeiro1:region_rect")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 0, 192, 48, 96 ), Rect2( 48, 192, 48, 96 ), Rect2( 96, 192, 48, 96 ), Rect2( 144, 192, 48, 96 ), Rect2( 192, 192, 48, 96 ), Rect2( 240, 192, 48, 96 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("KinematicBody2D/Enfermeiro2:region_rect")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 0, 192, 48, 96 ), Rect2( 48, 192, 48, 96 ), Rect2( 96, 192, 48, 96 ), Rect2( 144, 192, 48, 96 ), Rect2( 192, 192, 48, 96 ), Rect2( 240, 192, 48, 96 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "correndo_lado_e"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("KinematicBody2D/Doutor1:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 576, 192, 48, 96 ), Rect2( 624, 192, 48, 96 ), Rect2( 672, 192, 48, 96 ), Rect2( 720, 192, 48, 96 ), Rect2( 768, 192, 48, 96 ), Rect2( 816, 192, 48, 96 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("KinematicBody2D/Doutor2:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 0, 192, 48, 96 ), Rect2( 48, 192, 48, 96 ), Rect2( 96, 192, 48, 96 ), Rect2( 144, 192, 48, 96 ), Rect2( 192, 192, 48, 96 ), Rect2( 240, 192, 48, 96 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("KinematicBody2D/Enfermeiro1:region_rect")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 576, 192, 48, 96 ), Rect2( 624, 192, 48, 96 ), Rect2( 672, 192, 48, 96 ), Rect2( 720, 192, 48, 96 ), Rect2( 768, 192, 48, 96 ), Rect2( 816, 192, 48, 96 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("KinematicBody2D/Enfermeiro2:region_rect")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 576, 192, 48, 96 ), Rect2( 624, 192, 48, 96 ), Rect2( 672, 192, 48, 96 ), Rect2( 720, 192, 48, 96 ), Rect2( 768, 192, 48, 96 ), Rect2( 816, 192, 48, 96 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "parado_costas"
+length = 1.7
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("KinematicBody2D/Doutor1:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.2, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 288, 96, 48, 96 ), Rect2( 336, 96, 48, 96 ), Rect2( 384, 96, 48, 96 ), Rect2( 432, 96, 48, 96 ), Rect2( 480, 96, 48, 96 ), Rect2( 528, 96, 48, 96 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("KinematicBody2D/Doutor2:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.2, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 288, 96, 48, 96 ), Rect2( 336, 96, 48, 96 ), Rect2( 384, 96, 48, 96 ), Rect2( 432, 96, 48, 96 ), Rect2( 480, 96, 48, 96 ), Rect2( 528, 96, 48, 96 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("KinematicBody2D/Enfermeiro1:region_rect")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.2, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 288, 96, 48, 96 ), Rect2( 336, 96, 48, 96 ), Rect2( 384, 96, 48, 96 ), Rect2( 432, 96, 48, 96 ), Rect2( 480, 96, 48, 96 ), Rect2( 528, 96, 48, 96 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("KinematicBody2D/Enfermeiro2:region_rect")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.2, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 288, 96, 48, 96 ), Rect2( 336, 96, 48, 96 ), Rect2( 384, 96, 48, 96 ), Rect2( 432, 96, 48, 96 ), Rect2( 480, 96, 48, 96 ), Rect2( 528, 96, 48, 96 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "parado_frente"
+length = 1.7
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("KinematicBody2D/Doutor1:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.2, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 864, 96, 48, 96 ), Rect2( 912, 96, 48, 96 ), Rect2( 960, 96, 48, 96 ), Rect2( 1008, 96, 48, 96 ), Rect2( 1056, 96, 48, 96 ), Rect2( 1104, 96, 48, 96 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("KinematicBody2D/Doutor2:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.2, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 864, 96, 48, 96 ), Rect2( 912, 96, 48, 96 ), Rect2( 960, 96, 48, 96 ), Rect2( 1008, 96, 48, 96 ), Rect2( 1056, 96, 48, 96 ), Rect2( 1104, 96, 48, 96 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("KinematicBody2D/Enfermeiro1:region_rect")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.2, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 864, 96, 48, 96 ), Rect2( 912, 96, 48, 96 ), Rect2( 960, 96, 48, 96 ), Rect2( 1008, 96, 48, 96 ), Rect2( 1056, 96, 48, 96 ), Rect2( 1104, 96, 48, 96 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("KinematicBody2D/Enfermeiro2:region_rect")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.2, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 864, 96, 48, 96 ), Rect2( 912, 96, 48, 96 ), Rect2( 960, 96, 48, 96 ), Rect2( 1008, 96, 48, 96 ), Rect2( 1056, 96, 48, 96 ), Rect2( 1104, 96, 48, 96 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "parado_lado_d"
+length = 1.7
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("KinematicBody2D/Doutor1:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.2, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 0, 96, 48, 96 ), Rect2( 48, 96, 48, 96 ), Rect2( 96, 96, 48, 96 ), Rect2( 144, 96, 48, 96 ), Rect2( 192, 96, 48, 96 ), Rect2( 240, 96, 48, 96 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("KinematicBody2D/Doutor2:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.2, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 0, 96, 48, 96 ), Rect2( 48, 96, 48, 96 ), Rect2( 96, 96, 48, 96 ), Rect2( 144, 96, 48, 96 ), Rect2( 192, 96, 48, 96 ), Rect2( 240, 96, 48, 96 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("KinematicBody2D/Enfermeiro1:region_rect")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.2, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 0, 96, 48, 96 ), Rect2( 48, 96, 48, 96 ), Rect2( 96, 96, 48, 96 ), Rect2( 144, 96, 48, 96 ), Rect2( 192, 96, 48, 96 ), Rect2( 240, 96, 48, 96 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("KinematicBody2D/Enfermeiro2:region_rect")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.2, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 0, 96, 48, 96 ), Rect2( 48, 96, 48, 96 ), Rect2( 96, 96, 48, 96 ), Rect2( 144, 96, 48, 96 ), Rect2( 192, 96, 48, 96 ), Rect2( 240, 96, 48, 96 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "parado_lado_e"
+length = 1.7
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("KinematicBody2D/Doutor1:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.2, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 576, 96, 48, 96 ), Rect2( 624, 96, 48, 96 ), Rect2( 672, 96, 48, 96 ), Rect2( 720, 96, 48, 96 ), Rect2( 768, 96, 48, 96 ), Rect2( 816, 96, 48, 96 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("KinematicBody2D/Doutor2:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.2, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 576, 96, 48, 96 ), Rect2( 624, 96, 48, 96 ), Rect2( 672, 96, 48, 96 ), Rect2( 720, 96, 48, 96 ), Rect2( 768, 96, 48, 96 ), Rect2( 816, 96, 48, 96 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("KinematicBody2D/Enfermeiro1:region_rect")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.2, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 576, 96, 48, 96 ), Rect2( 624, 96, 48, 96 ), Rect2( 672, 96, 48, 96 ), Rect2( 720, 96, 48, 96 ), Rect2( 768, 96, 48, 96 ), Rect2( 816, 96, 48, 96 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("KinematicBody2D/Enfermeiro2:region_rect")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.2, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 576, 96, 48, 96 ), Rect2( 624, 96, 48, 96 ), Rect2( 672, 96, 48, 96 ), Rect2( 720, 96, 48, 96 ), Rect2( 768, 96, 48, 96 ), Rect2( 816, 96, 48, 96 ) ]
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+position = Vector2( 544, 256 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+position = Vector2( 0, 16 )
+shape = SubResource( 1 )
+
+[node name="Doutor1" type="Sprite" parent="KinematicBody2D"]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 144, 0, 48, 96 )
+
+[node name="Doutor2" type="Sprite" parent="KinematicBody2D"]
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 144, 0, 48, 96 )
+
+[node name="Enfermeiro1" type="Sprite" parent="KinematicBody2D"]
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 144, 0, 48, 96 )
+
+[node name="Enfermeiro2" type="Sprite" parent="KinematicBody2D"]
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 144, 0, 48, 96 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="KinematicBody2D"]
+root_node = NodePath("../..")
+anims/correndo_costas = SubResource( 2 )
+anims/correndo_frente = SubResource( 3 )
+anims/correndo_lado_d = SubResource( 4 )
+anims/correndo_lado_e = SubResource( 5 )
+anims/parado_costas = SubResource( 6 )
+anims/parado_frente = SubResource( 7 )
+anims/parado_lado_d = SubResource( 8 )
+anims/parado_lado_e = SubResource( 9 )
+
+[node name="ButtonProximoPersonagem" type="Button" parent="."]
+margin_left = 616.0
+margin_top = 264.0
+margin_right = 636.0
+margin_bottom = 284.0
+text = ">"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonPersonagemAnterior" type="Button" parent="."]
+margin_left = 452.0
+margin_top = 265.0
+margin_right = 472.0
+margin_bottom = 285.0
+text = "<"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelPersonagem" type="RichTextLabel" parent="."]
+margin_left = 488.0
+margin_top = 320.0
+margin_right = 600.0
+margin_bottom = 360.0
+bbcode_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonSelecionar" type="Button" parent="."]
+margin_left = 448.0
+margin_top = 336.0
+margin_right = 640.0
+margin_bottom = 368.0
+text = "INICIAR"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="ButtonProximoPersonagem" to="." method="_on_ButtonProximoPersonagem_pressed"]
+[connection signal="pressed" from="ButtonPersonagemAnterior" to="." method="_on_ButtonPersonagemAnterior_pressed"]
+[connection signal="pressed" from="ButtonSelecionar" to="." method="_on_ButtonSelecionar_pressed"]
