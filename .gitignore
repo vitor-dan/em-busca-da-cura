@@ -1,2 +1,6 @@
+# Arquivos de importação
+..import\*
+*.import
+
 # Dados sensíveis
 *\conexao.php
