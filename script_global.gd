@@ -5,3 +5,6 @@ var cabecalho_http_post = ["Content-Type: application/x-www-form-urlencoded"]
 
 func url_requisicao(url):
 	return caminho_api + url
+
+
+var cartao_verde_pego = false
