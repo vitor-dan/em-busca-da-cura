@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Ace Combat 7 DAREDEVIL (SYNTHWAVE REMIX).ogg-e57df7c282cedd5850b7f8e06f802804.oggstr"
+
+[deps]
+
+source_file="res://recursos/audio/Ace Combat 7 DAREDEVIL (SYNTHWAVE REMIX).ogg"
+dest_files=[ "res://.import/Ace Combat 7 DAREDEVIL (SYNTHWAVE REMIX).ogg-e57df7c282cedd5850b7f8e06f802804.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

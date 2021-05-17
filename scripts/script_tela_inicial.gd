@@ -4,8 +4,7 @@ func _ready():
 	pass
 
 func _process(delta):
-	if (Input.is_action_just_pressed("ui_accept")):
-		get_tree().change_scene("res://cenas/cena_laboratorio_1.tscn")
+	pass
 
 func _on_BtnConfiguracao_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT:
@@ -28,3 +27,18 @@ func _on_BtnRanking_mouse_exited():
 	$BtnRanking/AnimPlayerBtnRanking.stop(false)
 	$BtnRanking/AnimPlayerBtnRanking.seek(0, true)
 
+func _on_BtnEntrar_pressed():
+	var dados_envio = "usuario="+$LineEditUsuario.text+"&senha="+$LineEditSenha.text
+	$HTTPRequest.request(ScriptGlobal.url_requisicao("autenticacao.php"), ScriptGlobal.cabecalho_http_post, false, HTTPClient.METHOD_POST, dados_envio)
+
+func _on_HTTPRequest_request_completed(result, response_code, headers, body):
+	var json = JSON.parse(body.get_string_from_utf8())
+	if response_code == 200:
+		if json.result.sucesso:
+			get_tree().change_scene("res://cenas/cena_selecao_personagem.tscn")
+		else:
+			$AcceptDialog.dialog_text = json.result.mensagem
+			$AcceptDialog.show()
+	else:
+			$AcceptDialog.dialog_text = "Serviço indisponível"
+			$AcceptDialog.show()
